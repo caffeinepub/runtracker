@@ -1,0 +1,83 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    --background: 0.13 0.02 240;
+    --foreground: 0.95 0.005 240;
+    --card: 0.16 0.025 240;
+    --card-foreground: 0.95 0.005 240;
+    --popover: 0.18 0.025 240;
+    --popover-foreground: 0.95 0.005 240;
+    --primary: 0.65 0.18 45;
+    --primary-foreground: 0.98 0 0;
+    --secondary: 0.2 0.025 240;
+    --secondary-foreground: 0.95 0.005 240;
+    --muted: 0.2 0.02 240;
+    --muted-foreground: 0.65 0.01 240;
+    --accent: 0.78 0.18 185;
+    --accent-foreground: 0.1 0.02 240;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.25 0.025 240;
+    --input: 0.22 0.025 240;
+    --ring: 0.65 0.18 45;
+    --chart-1: 0.65 0.18 45;
+    --chart-2: 0.78 0.18 185;
+    --chart-3: 0.6 0.15 240;
+    --chart-4: 0.7 0.16 80;
+    --chart-5: 0.55 0.2 30;
+    --sidebar: 0.16 0.025 240;
+    --sidebar-foreground: 0.95 0.005 240;
+    --sidebar-primary: 0.65 0.18 45;
+    --sidebar-primary-foreground: 0.98 0 0;
+    --sidebar-accent: 0.2 0.025 240;
+    --sidebar-accent-foreground: 0.95 0.005 240;
+    --sidebar-border: 0.25 0.025 240;
+    --sidebar-ring: 0.65 0.18 45;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  }
+}
+
+/* Leaflet dark map overrides */
+.leaflet-container {
+  background: oklch(0.13 0.02 240);
+  border-radius: 0.75rem;
+}
+
+.leaflet-control-zoom a {
+  background: oklch(0.16 0.025 240) !important;
+  color: oklch(0.95 0.005 240) !important;
+  border-color: oklch(0.25 0.025 240) !important;
+}
+
+.leaflet-control-zoom a:hover {
+  background: oklch(0.2 0.025 240) !important;
+}
+
+.route-polyline {
+  stroke: #2ed3c6;
+  stroke-width: 4;
+  fill: none;
+}
